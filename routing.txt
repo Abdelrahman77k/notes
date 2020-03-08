@@ -1,0 +1,111 @@
+const appRoutes: Routes = [
+  { path: 'crisis-center', component: CrisisListComponent },
+  { path: 'hero/:id',      component: HeroDetailComponent },
+  {
+    path: 'heroes',
+    component: HeroListComponent,
+    data: { title: 'Heroes List' }
+  },
+  { path: '',
+    redirectTo: '/heroes',
+    pathMatch: 'full'
+  },
+  { path: '**', component: PageNotFoundComponent }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
+    // other imports here
+  ],
+  ...
+})
+export class AppModule { }
+
+{ path: '**', component: PageNotFoundComponent }
+
+ng generate module my-module --routing
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+export class ProfilesComponent implements OnInit {
+user:{id:number, name:string};
+
+  constructor(private route:ActivatedRoute) {}
+
+  ngOnInit() {
+    this.user = {
+      id: this.route.snapshot.params['id'],
+      name : this.route.snapshot.params['name']
+    };
+    this.route.params
+    .subscribe(
+      (params) => {
+        this.user.id = params['id'];
+        this.user.name = params['name'];
+      }
+    );
+  }
+}
+****************************************************************************
+
+
+//canactived and what is the routing graud 
+
+class UserToken {}
+class Permissions {
+  canActivate(user: UserToken, id: string): boolean {
+    return true;
+  }
+}
+
+@Injectable()
+class CanActivateTeam implements CanActivate {
+  constructor(private permissions: Permissions, private currentUser: UserToken) {}
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<boolean|UrlTree>|Promise<boolean|UrlTree>|boolean|UrlTree {
+    return this.permissions.canActivate(this.currentUser, route.params.id);
+  }
+}
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot([
+      {
+        path: 'team/:id',
+        component: TeamComponent,
+        canActivate: [CanActivateTeam]
+      }
+    ])
+  ],
+  providers: [CanActivateTeam, UserToken, Permissions]
+})
+class AppModule {}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+  ngOnInit() {
+     this.router.paramMap.subscribe(params =>{  //observable
+      let id = parseInt(params.get('id'));
+      console.log(id);
+    })
+
+  }
+
+}
+
+  ngOnInit() {
+    let id = parseInt(this.route.snapshot.paramMap.get('id'));
+    console.log(id);
+
+  }
+
+}
+

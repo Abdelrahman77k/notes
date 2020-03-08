@@ -1,0 +1,114 @@
+case sensetivity respect the rules of functions in js 
+
+//variables 
+
+var myName = "kareem adel"; //the variable named by camel case method.
+myAge = 24;
+/////////////////////////////////////////////////////////////////////
+// Basic Mathematical Operators
+
+== assigment , + - / * 
+myvar +=5   
+++myvar;
+
+Boolean(3 == 4); 
+false
+
+///////////////////////////////////////////////////////////////////
+
+//If Statements
+
+if(jfkjdfkjkdfjf) {
+	
+ 	console.log("");
+
+}else{
+
+
+}
+////////////////////////////////////////////////////////////////////
+
+34,247 views•Sep 10, 2015
+//Logical Operators
+
+> < => =< == === !=== !== || && 
+
+///////////////////////////////////////////////////////////////////
+
+//For Loops 
+
+for (i = 0; i < 10 ; i++) {
+	console.log("kareem adel");
+}
+//////////////////////////////////////////////////////////////
+
+//function
+function average (a,b){
+
+var age = (a + b) / 2 ; 
+
+console.log(age);
+
+}
+
+var myresult =  average(12,8);  //golabal var can pass in any place 
+
+/////////////////////////////////////////////////////////////////
+
+//Arrays 
+
+avr mynaums = [1,2,2,"hello"]
+
+mynums.sory();
+mynums.lenght;
+////////////////////////////////////////////////////////////////////
+
+//object 
+
+var person = {   //short method 
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+var mycar = new object() ;
+mycar.speed = 30;
+mycar.driver = "joo";
+
+this = the name of the object 
+///////////////////////////////////////////////////////////////
+
+//The Date Object
+new Date();
+new Date(2008,11,23)
+
+//////////////////////////////////////////////////////////////////
+
+Traversing downwards
+There are two methods to traverse downwards:
+
+querySelector or querySelectorAll
+children
+**********************************************
+Traversing upwards
+There are two methods to traverse upwards:
+
+parentElement
+closest
+***********************************************
+
+Traversing sideways
+element.nextElementSibling
+element.previousElementSibling
+Combine parentElement, children, and index
+***************************************************
+The addEventListener() method attaches an event handler to the specified element.
+
+element.addEventListener("click", function(){ alert("Hello World!"); });
+*************************************************************************************
+//Events 
+
+//JavaScript Timers  settimeout() , setinterval()
+****************************************************************************************
+//

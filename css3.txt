@@ -1,0 +1,62 @@
+//display : flex     to show the div one next one .
+
+//flex-direction: row-reverse  to reverse the dirctions of divs to start the right or left; 
+
+//justify-content: flex-end; 
+
+//justify-content: center;
+
+//justify-content: flex-start;
+
+//justify-content: space-between;
+
+//justify-content: space-around;
+
+//justify-content: space-evenly;
+********************************************************
+//align-items: center;
+
+//align-items: flex-end;
+
+//align-items: flex-start;
+
+//align-items: stretch;
+************************************************************
+//flex-wrap: wrap;
+
+//align-content: center;
+
+//order  to order the divs 
+
+//flex-grow to the change the size of the div
+
+//flex-basis: 400px; equel the width
+
+*****************************************************************************
+                        the GRID SYSTEM
+*****************************************************************************
+
+//display: grid;
+
+//grid-template-columns: minmax(auto, 50%) 1fr 1fr;
+
+//grid-template-rows: minmax(400px, auto);
+
+// grid-template-columns: 300px 300px;
+
+//grid-template-columns: 1fr 1fr 1fr;
+
+//grid-template-rows: 1fr 1fr 1fr;
+
+//grid-row:1/2;
+
+//grid-column: 1/2;
+
+***********************************************************************
+positions => static , fixed ,  absolute, fixed, sticky;
+
+
+
+
+
+

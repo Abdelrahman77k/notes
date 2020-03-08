@@ -1,0 +1,153 @@
+var text = document.querySelector('.contianer');
+
+var buton = document.querySelector('.change-color');
+
+text.style.backgroundColor = 'red';
+
+text.classList.remove("change");
+
+buton.addEventListener('click',function(){text.classList.add("change");});
+
+var x = document.querySelectorAll("p.intro");
+
+var x = document.forms["frm1"]; //Finding HTML Elements by HTML Object Collections
+
+document.getElementById("myImage").src = "landscape.jpg";
+
+document.getElementById("p2").style.color = "blue";
+******************************************************************
+You can add events of different types to the same element:
+
+Example
+element.addEventListener("mouseover", myFunction);
+element.addEventListener("click", mySecondFunction);
+element.addEventListener("mouseout", myThirdFunction);
+*****************************************************************
+
+addEventListener(event, function, useCapture); event bubbling or event capturing 
+****************************************************************************************
+
+Navigating Between Nodes
+You can use the following node properties to navigate between nodes with JavaScript:
+
+parentNode
+childNodes[nodenumber]
+firstChild
+lastChild
+nextSibling
+previousSibling
+****************************************************************
+document.body - The body of the document
+document.documentElement - The full document
+
+**************************************************************
+
+node name 
+node value 
+
+**************************************************************
+
+Creating New HTML Elements (Nodes) 
+
+var para = document.createElement("p");
+
+var node = document.createTextNode("This is new.");
+
+para.appendChild(node);
+
+insertBefore()
+
+remove()
+
+parent.removeChild(child);
+
+parent.replaceChild(para, child);
+
+**********************************************************************************************
+//exmain the document of object
+
+//console.dir(document);
+//console.log(document.domain);
+//console.log(document.URL);
+//console.log(document.title);
+//console.log(document.doctype);
+//console.log(document.head);
+//console.log(document.body);
+//console.log(document.all); array of objects
+//console.log(document.all[10]);
+//console.log(document.forms);
+//console.log(document.links);
+//console.log(document.images); 
+/*******************************************/ 
+//Get elementbyid
+
+//var header = document.getElementById('key');
+//header.innerHTML = "<h3>karrem adel</h3>";
+//header.style.color = "red";
+/*******************************************/
+
+//GET ELEMENT BY CLASSNAME
+//var app = document.getElementsByClassName('chlid3');
+/*****************************************************/
+
+//GET ELEMNT BY TAG NAME 
+
+// document.querySelector("#key");
+// document.querySelectorAll("#key");
+/*****************************************************/
+
+//trvaring the DOM
+//parentnode 
+ //var parentnode = document.querySelector("#key");
+ //console.log(parentnode.parentNode);
+
+ //parentelemnet 
+//var parentnode = document.querySelector("#key");
+//console.log(parentnode.parentElement);
+
+//chlidnode 
+//var parentnode = document.querySelector("#parent");
+//console.log(parentnode.childNodes);
+//console.log(parentnode.children);
+//console.log(parentnode.children[2]);
+//console.log(parentnode.childNodes[1]);
+//console.log(parentnode.firstChild);
+//console.log(parentnode.firstElementChild );
+//console.log(parentnode.lastChild);
+//console.log(parentnode.lastElementChild);
+/*****************************************************/
+//nextsliblings 
+//var parentnode = document.querySelector("#key");
+//console.log(parentnode.nextSibling);
+//console.log(parentnode.nextElementSibling);
+
+//previousSibling
+//var parentnode = document.querySelector("#key");
+//console.log(parentnode.previousSibling);
+//console.log(parentnode.previousElementSibling);
+/*****************************************************/
+//createlement 
+//var newdiv = document.createElement('div');
+//newdiv.className = "kareem";
+//newdiv.id = "ka";
+//newdiv.innerHTML = "hi karrem";
+//newdiv.setAttribute('title','hello');
+//var text = document.createTextNode('hi kareem adel');
+//newdiv.appendChild(text);
+//console.log(newdiv);
+/*****************************************************/
+//Event 
+//var button =  document.getElementById('put').addEventListener('click',button);
+//var input = document.getElementById('keys').addEventListener('keydown',put);
+/*
+function button(e){
+    console.log(e.target);
+ 
+}
+*/
+
+***********************************************************************************************************
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+

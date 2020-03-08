@@ -1,0 +1,84 @@
+//creat the class 
+/*
+const bowl = {
+  [Symbol('apple')]: { color: 'red', weight: 136.078 },
+  [Symbol('banana')]: { color: 'yellow', weight: 183.15 },
+  [Symbol('orange')]: { color: 'orange', weight: 170.097 },
+  [Symbol('banana')]: { color: 'yellow', weight: 176.845 }
+};
+console.log(bowl);
+/////////////////////////////////////////////////////////////////////////
+
+
+const games = new Set(['Super Mario Bros.', 'Banjo-Kazooie', 'Mario Kart', 'Super Mario Bros.']);
+games.add('Banjo-Tooie');
+games.add('Age of Empires');
+games.delete('Super Mario Bros.');
+games.clear();
+console.log(games);
+///////////////////////////////////////////////////////////////////////////////////////
+const months = new Set(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']);
+console.log(months.size);
+console.log(months.has("April"));
+console.log(months.values());
+
+const iterator = months.values();
+iterator.next();
+
+//////////////////////////////////////////////////////////////////////////////
+
+let student1 = { name: 'James', age: 26, gender: 'male' };
+let student2 = { name: 'Julia', age: 27, gender: 'female' };
+let student3 = { name: 'Richard', age: 31, gender: 'male' };
+
+const roster = new WeakSet([student1, student2, student3]);
+console.log(roster);
+/////////////////////////////////////////////////////////////////////////////
+
+//map
+
+const employees = new Map();
+
+employees.set('james.parkes@udacity.com', { 
+    firstName: 'James',
+    lastName: 'Parkes',
+    role: 'Content Developer' 
+});
+
+console.log(employees);
+
+
+const members = new Map();
+members.set('Evelyn', 75.68);
+members.set('kareem', 75.68);
+
+console.log(members.has("kareem"));
+console.log(members.get("kareem"));
+console.log(members.keys());
+
+const namew = members.keys();
+
+console.log(namew.next());
+console.log(namew.next());
+
+for (const member of members) {
+  console.log(member);
+}
+
+members.forEach((value, key) => console.log(key, value));
+///////////////////////////////////////////////////////////
+
+const book1 = { title: 'Pride and Prejudice', author: 'Jane Austen' };
+const book2 = { title: 'The Catcher in the Rye', author: 'J.D. Salinger' };
+const book3 = { title: 'Gulliver’s Travels', author: 'Jonathan Swift' };
+
+const library = new WeakMap();
+library.set(book1, true);
+library.set(book2, false);
+library.set(book3, true);
+console.log(library);
+
+/////////////////////////////////////////////////////////////////////
+
+*/
+

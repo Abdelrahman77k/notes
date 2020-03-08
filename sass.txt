@@ -1,0 +1,237 @@
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin horizontal-list {
+    @include reset-list;
+
+    li {
+        display: inline-block;
+
+        margin: {
+            left: -2px;
+            right: 2em;
+        }
+    }
+}
+
+nav ul {
+    @include horizontal-list;
+}
+
+@mixin move($left-start, $left-stop) {
+    position: absolute;
+    left: $left-start;
+    transition: left ($left-stop - $left-start) * $transition-speed;
+  
+    &:hover {
+      left: $left-stop;
+    }
+  }
+  
+  .slider {
+    @include move(10px, 120px);
+  }
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+Selector Lists 
+.alert, .warning {
+  ul, p {
+    margin-right: 0;
+    margin-left: 0;
+    padding-bottom: 0;
+  }
+}
+
+***************************************************************************************
+Selector Combinators 
+
+ul > {
+  li {
+    list-style-type: none;
+  }
+}
+
+h2 {
+  + p {
+    border-top: 1px solid gray;
+  }
+}
+
+p {
+  ~ {
+    span {
+      opacity: 0.8;
+    }
+  }
+}
+
+*******************************************************************************************
+//Hidden Declarations
+
+$rounded-corners: false;
+
+.button {
+  border: 1px solid black;
+  border-radius: if($rounded-corners, 5px, null);
+}
+********************************************************************************
+
+What’s the use of a selector that isn’t emitted? It can still be extended! Unlike class selectors, 
+placeholders don’t clutter up the CSS if they aren’t extended and they don’t mandate that 
+users of a library use specific class names for their HTML
+
+%toolbelt {
+  box-sizing: border-box;
+  border-top: 1px rgba(#000, .12) solid;
+  padding: 16px 0;
+  width: 100%;
+
+  &:hover { border: 2px rgba(#000, .5) solid; }
+}
+
+.action-buttons {
+  @extend %toolbelt;
+  color: #4285f4;
+}
+
+*************************************************************************************
+//scope
+
+$global-variable: global value;
+
+.content {
+  $local-variable: local value;
+  global: $global-variable;
+  local: $local-variable;
+}
+
+.sidebar {
+  global: $global-variable;
+
+  // This would fail, because $local-variable isn't in scope:
+  // local: $local-variable;
+}
+**************************************************************************************
+$variable: first global value;  
+
+.content {
+  $variable: second global value !global;
+  value: $variable;
+}
+
+.sidebar {
+  value: $variable;
+}
+**********************************************************************************
+//interpolation
+
+@mixin corner-icon($name, $top-or-bottom, $left-or-right) {
+  .icon-#{$name} {
+    background-image: url("/icons/#{$name}.svg");
+    position: absolute;
+    #{$top-or-bottom}: 0;
+    #{$left-or-right}: 0;
+  }
+}
+
+@include corner-icon("mail", top, left)
+********************************************************************************
+@use 'foundation/code';
+@use 'foundation/lists';
+
+// _library.scss
+$black: #000 !default;
+$border-radius: 0.25rem !default;
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
+
+code {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+// style.scss
+@use 'library' with (
+  $black: #222,
+  $border-radius: 0.1rem
+);
+
+*****************************************************************************
+@forward
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin list-horizontal {
+  @include reset;
+
+  li {
+    display: inline-block;
+    margin: {
+      left: -2px;
+      right: $horizontal-list-gap;
+    }
+  }
+}
+// bootstrap.scss
+@forward "src/list" hide list-reset, $horizontal-list-gap;
+********************************************************************************
+//Configuring Modules
+
+$black: #000 !default;
+$border-radius: 0.25rem !default;
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
+
+code {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+// _opinionated.scss
+@forward 'library' with (
+  $black: #222 !default,
+  $border-radius: 0.1rem !default
+);
+
+*************************************************************************************
+
+@import "theme.css";
+@import "http://fonts.googleapis.com/css?family=Droid+Sans";
+@import url(theme);
+@import "landscape" screen and (orientation: landscape);
+@mixin google-font($family) {
+  @import url("http://fonts.googleapis.com/css?family=#{$family}");
+}
+
+**********************************************************************************
+
+@mixin inset-divider-offset($offset, $padding) {
+  $divider-offset: (2 * $padding) + $offset;
+  @debug "divider offset: #{$divider-offset}";
+
+  margin-left: $divider-offset;
+  width: calc(100% - #{$divider-offset});
+}
+*******************************************************************************
+//permalinkDestructuring
+
+$icons:
+  "eye" "\f112" 12px,
+  "start" "\f12e" 16px,
+  "stop" "\f12f" 10px;
+
+@each $name, $glyph, $size in $icons {
+  .icon-#{$name}:before {
+    display: inline-block;
+    font-family: "Icon Font";
+    content: $glyph;
+    font-size: $size;
+  }
+}
+***************************************************************************
+
+
+

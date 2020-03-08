@@ -1,0 +1,170 @@
+//Hoisting
+
+ Hoisting is a result of how JavaScript is interpreted by your browser. Essentially, before any JavaScript code is executed,
+ all variables declared with var are "hoisted", which means they're raised to the top of the function scope. So at run-time,
+ the getClothing() function actually looks more like thisRules for using let and const
+*********************************************************************************************************************
+//let and const also have some other interesting properties.
+Variables declared with let can be reassigned, but can’t be redeclared in the same scope.
+Variables declared with const must be assigned an initial value, but can’t be redeclared in the same scope, and can’t be reassigned.
+****************************************************************************************
+//template literals
+NOTE: As an alternative to using the string concatenation operator ( + ), 
+you can use the String's concat() method, but both options are rather clunky for simulating true string interpolation.
+
+let message = `${student.name} please see ${teacher.name} in ${teacher.room} to pick up your report card.`;
+
+as well as the newline characters ( \n ). That's because template literals also preserve newlines as part of the string!
+**************************************************************************************************************** 
+//Destructuring
+
+The example above shows extracting values from an array.
+
+const gemstone = {
+  type: 'quartz',
+  color: 'rose',
+  carat: 21.29
+};
+
+const type = gemstone.type;
+const color = gemstone.color;
+const carat = gemstone.carat;
+
+console.log(type, color, carat);
+**********************************************************************************************************
+//Object Literal Shorthand
+
+let type = 'quartz';
+let color = 'rose';
+let carat = 21.29;
+let gemstone = {type, color, carat}; the same of names of propties the object 
+***************************************************************************************************
+
+***************************************************************************************************
+
+//Spread... Operator
+to conact the two arrays in the consat 
+
+const fruits = ["apples", "bananas", "pears"];
+const vegetables = ["corn", "potatoes", "carrots"];
+const produce = fruits.concat(vegetables);
+console.log(produce);
+
+*********************************************************************************************
+//set paramter
+const order = [0, 1, 2,4,5,6,9];
+console.log(...order);
+*****************************************************************************************************
+//Variadic functions 
+ For example, let’s say we have a function called sum() which calculates the sum of an indefinite amount of numbers. 
+How might the sum() function be called during execution?
+******************************************************************************************************
+
+/*
+The map() method creates a new array populated with the results of calling a provided function 
+on every element in the calling array.
+*/
+const Names = ['garrin', 'iagure', 'asser'];
+
+const zedNames = Names.map(name => name.toUpperCase()   
+);
+
+ 
+const names = ['kareem','adel','mame'];
+
+const longname = names.filter(name => name.length > 4);
+***************************************************************************************************************
+//Arrow Functions
+
+*********************************************************************************************************
+//Concise and block body syntax
+All of the arrow functions we've been looking at have only had a single expression as the function body:
+
+const upperizedNames = ['Farrin', 'Kagure', 'Asser'].map(name => name.toUpperCase());
+
+******************************************************************************************************
+//Default function parameters
+function names(name ='student', greeted= 'hi'){
+return `${name} ${greeted}!`; 
+
+}
+names();
+********************************************************
+
+//Defaults and destructuring arrays
+function buildhouse ([floors = 1,color = 'red',walls = 'brick']=[]){
+  return `Your house has ${floors} with ${color}`;
+}
+
+/*
+See that new = [] in the function's parameter? If createGrid() is called without any argument then it will use this default empty array.
+ And since the array is empty, there's nothing to destructure into width and height, so their default values will apply! 
+So by adding = [] to give the entire parameter a default, 
+the following code will now work:
+
+*/
+
+*******************************************************************************************************************************
+
+//js6 classes
+
+A class is a type of function, 
+but instead of using the keyword function to initiate it, we use the keyword class, 
+and the properties are assigned inside a constructor() method.
+
+The constructor method is special, it is where you initialize properties, it is called automatically when a class is initiated, 
+and it has to have the exact name "constructor", 
+in fact, if you do not have a constructor method, 
+JavaScript will add an invisible and empty constructor method.
+
+class num {
+  constructor(brand) {
+    this.myname = brand;
+
+  }
+
+}
+
+mynew = new num("foed");
+
+console.log(mynew);
+
+******************************************************************************************************************
+//Inheritance
+To create a class inheritance, use the extends keyword.
+A class created with a class inheritance inherits all the methods from another class:
+///////////////////////////////////////////
+
+The super() method refers to the parent class.
+By calling the super() method in the constructor method, 
+we call the parent's constructor method and gets access to the parent's properties and methods.
+
+class mycar {
+  constructor(brand) {
+    this.mybrand = brand
+
+  }
+  present() {
+    return "my car is " + this.mybrand;
+  }
+
+}
+class models extends mycar {
+  constructor(brand, mod) {
+    super(brand);
+    this, mymode = mod;
+
+  }
+  show() {
+    return this.present() + "is the model is" + this.mymode;
+
+  }
+
+}
+****************************************************************************************
+//symbols
+A symbol is a unique and immutable data type that is often used to identify object properties.
+To create a symbol, you write Symbol() with an optional string as its description.
+*********************************************************************************************
+
+

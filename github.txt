@@ -1,0 +1,72 @@
+//git clone to download the repo on the local pc
+
+//git status
+
+//git add   to push the code on the stage area
+
+//git reset head
+
+//git commit  to push the code on the local
+
+//git branch 
+
+//git remote -v 
+
+//git push origin master
+
+// git pull origin 
+
+//git config -l 
+
+//git config --global user.email
+
+//git push -u origin master
+
+//git branch login 
+
+//git checkout login 
+
+//git checkout -b login 
+
+//git stash to hidden the files no want upload on repo 
+
+//git stash list 
+
+//git stash list {1}
+
+//git stash apply
+
+//git stash show stash@[1]
+
+
+**********************************************************************************
+
+the command line 
+
+cd change the the dirrctory
+
+mkdir make the the file 
+
+dir or ls 
+
+clear or cls 
+
+move -r rename or move 
+
+cp -r copy
+
+rm -r to remove the files 
+
+rm -d to remove the file empty
+
+echo "kareem" > ka.txt 
+
+grep to search line or word in files
+
+move /?  show the manul
+
+tree /a
+
+//whoiam
+
+
